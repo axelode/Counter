@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+
+    <style>
+        *,
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .button {
+            background-color: black;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 11px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .btn {
+            color: white;
+            padding: 9px;
+        }
+
+        .btn:hover {
+            background-color: tomato;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+
+        #num {
+            font-size: 100px;
+            font-weight: 700;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="number">
+            <h1 id="num">0</h1>
+        </div>
+        <div class="button">
+            <a id="plusButton" class="btn" onclick="plus()">Tambah</a>
+            <a id="minButton" class="btn" onclick="min()">Kurang</a>
+            <a id="resetButton" class="btn" onclick="res()">Reset</a>
+        </div>
+    </div>
+
+    <script>
+        let number = document.getElementById('num');
+        accumulation = 0;
+
+        function plus() {
+            accumulation += 1;
+            number.innerHTML = accumulation;
+        }
+
+        function min() {
+            accumulation -= 1;
+            number.innerHTML = accumulation;
+        }
+
+        function res() {
+            accumulation = 0;
+            number.innerHTML = accumulation;
+        }
+    </script>
+
+</body>
+</html>
